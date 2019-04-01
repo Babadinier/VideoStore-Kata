@@ -26,9 +26,9 @@ namespace VideoStore.Services
             var statement = $"Rental Record for {Name}\n";
             foreach (var rental in _rentals)
             {
-                
-                RenterPoints += rental.Movie.Type.RenterPoint;
-                var amount = rental.Movie.Type.Amount;
+
+                RenterPoints += rental.CalculateFrequentRenterPoints();
+                var amount = rental.CalculateAmount();
 
                 statement += "\t" + rental.Movie.Title + "\t" + amount.ToString("0.0", CultureInfo.InvariantCulture) + "\n";
                 TotalAmount += amount;

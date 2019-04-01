@@ -2,20 +2,15 @@
 {
     public class NewReleaseTypeMovie : ITypeMovie
     {
-        private int _daysRented;
-        public NewReleaseTypeMovie(int daysRented)
+        public decimal CalculateAmount(int daysRented)
         {
-            _daysRented = daysRented;
+            return daysRented * 3;
         }
 
-        public decimal Amount => _daysRented * 3;
-        public int RenterPoint => GetFrequentRenterPoints();
-
-
-        private int GetFrequentRenterPoints()
+        public int CalculateFrequentRenterPoint(int daysRented)
         {
             var frequentRenterPoints = 1;
-            if (_daysRented > 1)
+            if (daysRented > 1)
             {
                 frequentRenterPoints++;
             }

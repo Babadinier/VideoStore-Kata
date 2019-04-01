@@ -2,7 +2,7 @@
 {
     public interface ITypeMovie
     {
-        decimal Amount { get; }
-        int RenterPoint { get; }
+        decimal CalculateAmount(int daysRented);
+        int CalculateFrequentRenterPoint(int daysRented);
     }
 }
